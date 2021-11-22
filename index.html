@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+    <title>Library</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="welcome">Welcome to your personal library!</h1>
+        <button class="add-book-button">Add new book</button>
+    </div>
+    <div class="content">
+        <div class="book-card template">
+            <p class="card-book-title">Title: </p>
+            <p class="card-book-author">Author: </p>
+            <p class="card-book-pgnumber">Number of pages: </p>
+            <p class="card-book-isread">Status: </p>
+            <div class="card-actions">
+                <button class="card-status-button">Read</button>
+                <button class="card-delete-button">Delete</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="footer-text">Page created by Khorea</p>
+    </div>
+    <div class="modal-background">
+        <div class="modal insert-book-modal">
+            <h1 class="modal-title">Enter book info</h1>
+            
+            <div class="input-block">
+                <input class="title-input" type="text" required>
+                <label class="placeholder">Title</label>
+            </div>
+            <p class="error" data-input="title">Please enter a title</label>
+            
+            <div class="input-block">
+                <input class="author-input" type="text" required>
+                <label class="placeholder">Author</label>
+            </div>
+            <p class="error" data-input="author">Please enter an author</label>
+
+            <div class="input-block">
+                <input class="pageNr-input" type="text" required>
+                <label class="placeholder">Number of pages</label> 
+            </div>
+            <p class="error" data-input="pageNr">Please enter a positive integer</label>
+
+            <div class="input-block">
+                <input id="isRead" type="checkbox">
+                <label for="isRead">Is read?</label>
+            </div>
+            
+            <div>
+                <button class="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

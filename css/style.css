@@ -1,0 +1,207 @@
+:root {
+    --card-color: #D3D5D4;
+    --content-color-bg: #FFFFFF;
+    --marginals-color: #A2C5AC; /* marginals = header and footer */
+}
+
+html {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-width: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header,
+.footer {
+    background-color: var(--marginals-color);
+}
+
+.header {
+    height: 100px;
+    flex-grow: 0;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    background-color: var(--content-color-bg);
+    padding-right: 40px;
+    padding-left: 40px;
+    gap: 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 50px;
+}
+
+.book-card {
+    background-color: var(--card-color);
+    width: 350px;
+    height: 200px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.book-card.template {
+    display: none;
+}
+
+.footer {
+    height: 50px;
+    flex-grow: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.modal-background {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.41);
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: 200ms ease-in-out;
+    border: 2px;
+    border-style: solid;
+    padding: 30px;
+    gap: 30px;
+    background-color: peachpuff;
+}
+
+.insert-book-modal {
+    width: 250px;
+    height: 270px;
+    border-radius: 10px;
+}
+
+.modal-background.active {
+    display: flex;
+}
+
+.input-block,
+.insert-book-modal div {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    flex-grow: 1;
+}
+
+.insert-book-modal div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: 100ms ease-in-out;
+}
+
+input {
+    background-color: peachpuff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    z-index: 1;
+    background-color: transparent;
+    border-style: none;
+    border-bottom-style: dashed;
+    border-bottom-color: grey;
+    outline: none;
+    -webkit-transition: 100ms;
+}
+
+input:focus ~ .placeholder,
+input:valid ~ .placeholder {
+    color: transparent;
+}
+
+input:focus {
+    border-bottom-color: black;
+}
+
+input[type='checkbox'] {
+    width: auto;
+    scale: 1.5;
+}
+
+label[for='isRead'] {
+    position: absolute;
+    top: -2;
+    left: 10%;
+}
+
+.modal-title {
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.insert-book-modal button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+    border-style: none;
+    background-color:powderblue;
+    border-radius: 5px;
+}
+
+.insert-book-modal button:hover {
+    background-color:cornflowerblue;
+    color: white;
+}
+
+p.error {
+    display: none;
+    color: crimson;
+    font-size: 9px;
+}
+
+p.error.active {
+    display: inline-flex;
+}
